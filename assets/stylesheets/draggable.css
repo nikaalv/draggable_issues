@@ -1,0 +1,11 @@
+table.list.issues tr {
+  position: relative;
+}
+table.list.issues tr:before {
+  position: absolute;
+}
+.dragged {
+  position: absolute !important;
+  opacity: 0.5;
+  z-index: 2000;
+}
