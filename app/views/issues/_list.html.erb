@@ -1,3 +1,5 @@
+<% draggable_icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAASZJREFUOBGlk8uNQjEMRR8fDZRCD2wyRUwZ0wI7GqAOxIY9ohTYMAXMLAYEPO55+IL5SCy40iF+thMnTqiqR7WSaywbrByz72bMCRNF6gDbyjlVx94Y+WZSEV+iL/5EW6zFSjhH5lWsmhf7iNBMIyD7sMltdtINg6oHYe3DIG7Zx7dzW2yNyagIquBzNao0le5iRd+oJhnRpJHYiaP4F2gbYOMjRg65TWPZItf0LX4E5/WxmDwUaCp6gt1ylIH4FL/egez3xHYWT5agMtyL3Pw2mnjRr5vI/aN5gI3PDS44kM/L2ZY4QjQK+Yaw3WDGJQ7pco1cVX5Ivn8a5vu3j4l+SLkA/ssiRTbn3ATYRaBc6OxJv340uGgSFSA3LOco9Kic8PLvfALU/z3N7Np55QAAAABJRU5ErkJggg==" %>
+
 <% query_options = nil unless defined?(query_options) %>
 <% query_options ||= {} %>
 
@@ -33,7 +35,7 @@
 
   <tr id="issue-<%= issue.id %>" class="hascontextmenu <%= cycle('odd', 'even') %> <%= issue.css_classes %> <%= level > 0 ? "idnt idnt-#{level}" : nil %>">
     <td class="draggable-item">
-      <img src="/images/move_drag.png">
+      <img src="<%= draggable_icon %>">
     </td>
     <td class="checkbox hide-when-print"><%= check_box_tag("ids[]", issue.id, false, :id => nil) %></td>
     <%= raw query.inline_columns.map {|column| "<td class=\"#{column.css_classes}\">#{column_content(column, issue)}</td>"}.join %>
