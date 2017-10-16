@@ -1,4 +1,4 @@
-class CreateOrderPositions < ActiveRecord::Migration
+class CreateOrderPositions < ActiveRecord::Migration[4.2]
   def change
     create_table :order_positions do |t|
       t.integer :index

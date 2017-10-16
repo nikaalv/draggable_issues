@@ -1,5 +1,5 @@
 class OrderPosition < ActiveRecord::Base
-  MAX_INDEX = 9999
+  MAX_INDEX = Float::INFINITY
   unloadable
 
   after_initialize :init

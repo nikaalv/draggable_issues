@@ -20,7 +20,6 @@ module DraggableIssues
         end
 
         def change_order_index!
-          binding.pry
           order_position.update_attribute(:index, OrderPosition::MAX_INDEX)
         end
       end
